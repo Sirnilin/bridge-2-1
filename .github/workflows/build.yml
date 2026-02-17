@@ -1,0 +1,43 @@
+name: Build PDF
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: Compile LaTeX
+      uses: xu-cheng/latex-action@v3
+      with:
+        root_file: main.tex
+        latexmk_use_xelatex: true
+
+    - name: Upload PDF artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: bridge-system
+        path: main.pdf
+
+    # Автоматический релиз при пуше в main
+    - name: Get date
+      if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+      id: date
+      run: echo "date=$(date +'%Y-%m-%d-%H%M')" >> $GITHUB_OUTPUT
+
+    - name: Create Release
+      if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+      uses: softprops/action-gh-release@v2
+      with:
+        tag_name: build-${{ steps.date.outputs.date }}
+        name: "PDF ${{ steps.date.outputs.date }}"
+        files: main.pdf
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

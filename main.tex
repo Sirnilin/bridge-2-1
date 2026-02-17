@@ -1,0 +1,112 @@
+% ============================================================
+%  СИСТЕМА ТОРГОВЛИ — БРИДЖ
+%  Система: 2/1 Game Force
+%  Компиляция: XeLaTeX
+% ============================================================
+
+\documentclass[a4paper, 11pt]{article}
+
+% --- Шрифты и язык ---
+\usepackage{fontspec}
+\setmainfont{DejaVu Serif}
+\setsansfont{DejaVu Sans}
+\setmonofont{DejaVu Sans Mono}
+\usepackage{polyglossia}
+\setmainlanguage{russian}
+\setotherlanguage{english}
+
+% --- Разметка ---
+\usepackage[margin=1.8cm, top=2cm, bottom=2cm]{geometry}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+
+% --- Цвета ---
+\usepackage[table]{xcolor}
+\definecolor{spades}{HTML}{1B3A5C}
+\definecolor{hearts}{HTML}{C0392B}
+\definecolor{diamonds}{HTML}{E67E22}
+\definecolor{clubs}{HTML}{27AE60}
+\definecolor{notrump}{HTML}{2C3E50}
+\definecolor{forcing}{HTML}{E74C3C}
+\definecolor{invit}{HTML}{F39C12}
+\definecolor{signoff}{HTML}{2ECC71}
+\definecolor{headerblue}{HTML}{2C3E50}
+\definecolor{lightgray}{HTML}{F5F5F5}
+\definecolor{alert}{HTML}{9B59B6}
+
+% --- Таблицы ---
+\usepackage{booktabs}
+\usepackage{array}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+
+% --- Ссылки ---
+\usepackage[colorlinks=true, linkcolor=headerblue, urlcolor=headerblue]{hyperref}
+
+% --- Заметки ---
+\usepackage{tcolorbox}
+\newtcolorbox{bidnote}[1][]{%
+  colback=lightgray, colframe=headerblue,
+  fonttitle=\bfseries, title=#1,
+  boxrule=0.5pt, arc=3pt,
+  left=5pt, right=5pt, top=3pt, bottom=3pt,
+}
+
+% ============================================================
+%  МАКРОСЫ — подключаем из отдельного файла
+% ============================================================
+\input{sections/macros}
+
+% --- Оформление заголовков ---
+\titleformat{\section}
+  {\Large\bfseries\color{headerblue}}
+  {\thesection}{0.8em}{}[\vspace{-0.3em}\color{headerblue}\rule{\linewidth}{0.5pt}]
+\titleformat{\subsection}
+  {\large\bfseries\color{headerblue}}
+  {\thesubsection}{0.6em}{}
+
+% --- Колонтитулы ---
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\color{headerblue}\textbf{Система торговли 2/1 GF}}
+\fancyhead[R]{\small\color{headerblue}Пара: Иванов -- Петров} % ← ВПИШИТЕ ИМЕНА
+\fancyfoot[C]{\small\thepage\ / \pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.4pt}
+
+% ============================================================
+\begin{document}
+
+% --- Титульная страница ---
+\begin{center}
+  \vspace*{1cm}
+  {\Huge\bfseries\color{headerblue} Система торговли}\\[0.5cm]
+  {\LARGE 2/1 Game Force}\\[1cm]
+  {\Large Иванов~И.~И.\ ---\ Петров~П.~П.}\\[0.5cm]
+  {\large Версия 1.0\ |\ \today}\\[1.5cm]
+  \begin{tabular}{cl}
+    \gf & Форсинг до гейма \\
+    \fone & Форсинг на один круг \\
+    \inv & Инвитационный \\
+    \so & Сайнофф \\
+    \al & Алертуется \\
+  \end{tabular}
+\end{center}
+\vspace{1cm}
+\tableofcontents
+\newpage
+
+% --- Разделы ---
+\input{sections/openings}
+\input{sections/competitive}
+\input{sections/defensive}
+\input{sections/signals}
+\input{sections/conventions}
+
+\vfill
+\begin{center}
+  \small\color{gray}
+  Последнее обновление: \today
+\end{center}
+
+\end{document}

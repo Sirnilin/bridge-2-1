@@ -1,0 +1,56 @@
+% ============================================================
+%  МАКРОСЫ ДЛЯ БРИДЖА
+%  Этот файл подключается автоматически. Редактируйте,
+%  только если хотите добавить новые макросы.
+% ============================================================
+
+% --- Масти ---
+\newcommand{\s}{\textcolor{spades}{♠}}
+\newcommand{\h}{\textcolor{hearts}{♥}}
+\newcommand{\di}{\textcolor{diamonds}{♦}}
+\newcommand{\cl}{\textcolor{clubs}{♣}}
+\newcommand{\nt}{\textcolor{notrump}{\textbf{NT}}}
+
+% --- Биды ---
+\newcommand{\bid}[2]{\textbf{#1#2}}
+
+% --- Маркеры ---
+\newcommand{\gf}{\,{\scriptsize\colorbox{forcing!20}{\color{forcing}\textbf{GF}}}\,}
+\newcommand{\fone}{\,{\scriptsize\colorbox{forcing!20}{\color{forcing}\textbf{F1}}}\,}
+\newcommand{\inv}{\,{\scriptsize\colorbox{invit!20}{\color{invit}\textbf{INV}}}\,}
+\newcommand{\so}{\,{\scriptsize\colorbox{signoff!20}{\color{signoff}\textbf{SO}}}\,}
+\newcommand{\al}{\,{\scriptsize\colorbox{alert!20}{\color{alert}\textbf{AL}}}\,}
+
+% --- Строка таблицы ---
+\newcommand{\bidrow}[3]{#1 & #2 & #3 \\}
+
+% --- Начало/конец таблицы бидов ---
+\newcommand{\bidsectionstart}[1]{%
+  \subsection{#1}
+  \vspace{-0.3em}
+  \begin{tabular}{L{2.2cm} L{2.5cm} L{10.5cm}}
+  \toprule
+  \textbf{Бид} & \textbf{Сила} & \textbf{Описание} \\
+  \midrule
+}
+\newcommand{\bidsectionend}{%
+  \bottomrule
+  \end{tabular}
+  \vspace{0.5em}
+}
+
+% --- Начало/конец таблицы продолжений ---
+\newcommand{\contbidsstart}[1]{%
+  \vspace{0.3em}
+  \noindent\textit{Продолжения после #1:}
+  \vspace{0.2em}
+  \begin{tabular}{L{2.2cm} L{2.5cm} L{10.5cm}}
+  \toprule
+  \textbf{Ответ} & \textbf{Сила} & \textbf{Описание} \\
+  \midrule
+}
+\newcommand{\contbidsend}{%
+  \bottomrule
+  \end{tabular}
+  \vspace{0.5em}
+}
