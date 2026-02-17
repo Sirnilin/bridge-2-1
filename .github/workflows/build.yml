@@ -19,6 +19,9 @@ jobs:
       with:
         root_file: main.tex
         latexmk_use_xelatex: true
+        pre_compile: |
+          apk add --no-cache fontconfig ttf-dejavu
+          fc-cache -fv
 
     - name: Upload PDF artifact
       uses: actions/upload-artifact@v4
