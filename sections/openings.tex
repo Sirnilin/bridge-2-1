@@ -14,7 +14,7 @@
   \bidrow{\bid{1}{\nt}}{6--10}{Без 4-карт. старшей}
   \bidrow{\bid{2}{\cl}}{11+}{5+\cl\gf\ (2/1)}
   \bidrow{\bid{2}{\di}}{11+}{5+\di\gf\ (2/1)}
-  \bidrow{\bid{2}{\nt}}{13--15}{Без 4-карт. старшей, Якоби 2\nt\al}
+  \bidrow{\bid{2}{\nt}}{11--12}{Инвит к \bid{3}{\nt}, нет 4-карт. старшей}
   \bidrow{\bid{3}{\cl}}{6--10}{5+\cl, поддержка\inv}
 \contbidsend
 
@@ -29,7 +29,7 @@
   \bidrow{\bid{1}{\nt}}{6--10}{Без 4-карт. старшей}
   \bidrow{\bid{2}{\cl}}{11+}{4+\cl\gf\ (2/1)}
   \bidrow{\bid{2}{\di}}{6--10}{4+\di, поддержка}
-  \bidrow{\bid{2}{\nt}}{13--15}{Якоби 2\nt\al}
+  \bidrow{\bid{2}{\nt}}{11--12}{Инвит к \bid{3}{\nt}}
   \bidrow{\bid{3}{\di}}{6--10}{5+\di\inv}
 \contbidsend
 
@@ -82,14 +82,34 @@
 \bidsectionend
 
 \contbidsstart{\bid{1}{\nt}}
-  \bidrow{\bid{2}{\cl}}{8+}{Стэйман\al\fone}
+  \bidrow{\bid{2}{\cl}}{$\sim$}{Стэйман\al\fone}
   \bidrow{\bid{2}{\di}}{0+}{Трансфер в \h\al\so}
   \bidrow{\bid{2}{\h}}{0+}{Трансфер в \s\al\so}
-  \bidrow{\bid{2}{\s}}{$\sim$}{Трансфер в \cl\al}
-  \bidrow{\bid{2}{\nt}}{8--9}{Натуральный\inv}
-  \bidrow{\bid{3}{\nt}}{10--15}{К игре}
-  \bidrow{\bid{4}{\nt}}{16--17}{Количественный\inv}
+  \bidrow{\bid{2}{\s}}{$\sim$}{Трансфер в \cl\ или инвит 8 очков\al}
+  \bidrow{\bid{2}{\nt}}{$\sim$}{Трансфер в \di\ или 55 миноры\al}
+  \bidrow{\bid{3}{\cl}}{$\sim$}{Инвит: 6\cl, 3 фигуры из ТКДВ\inv}
+  \bidrow{\bid{3}{\di}}{$\sim$}{Инвит: 6\di, 3 фигуры из ТКДВ\inv}
+  \bidrow{\bid{3}{\h}}{$\sim$}{Синглет, 54 миноры\gf\al}
+  \bidrow{\bid{3}{\s}}{$\sim$}{Синглет, 54 миноры\gf\al}
+  \bidrow{\bid{3}{\nt}}{$\sim$}{Контракт}
+  \bidrow{\bid{4}{\cl}}{$\sim$}{55 мажоры\al}
+  \bidrow{\bid{4}{\di}}{$\sim$}{Супертрансфер в \h\al}
+  \bidrow{\bid{4}{\h}}{$\sim$}{Супертрансфер в \s\al}
+  \bidrow{\bid{4}{\nt}}{$\sim$}{Инвит в \bid{6}{\nt}}
+  \bidrow{\bid{5}{\nt}}{$\sim$}{Инвит в \bid{7}{\nt}}
 \contbidsend
+
+\begin{bidnote}[\bid{2}{\s} после \bid{1}{\nt}: трансфер в \cl\ или инвит]
+  Открывший отвечает:
+  \begin{itemize}[noitemsep, topsep=2pt]
+    \item \bid{2}{\nt} = минимум
+    \item \bid{3}{\cl} = максимум
+  \end{itemize}
+\end{bidnote}
+
+\begin{bidnote}[\bid{2}{\nt} после \bid{1}{\nt}: трансфер в \di\ или 55 миноры]
+  Открывший отвечает лучший минор.
+\end{bidnote}
 
 \begin{bidnote}[Стэйман после \bid{1}{\nt}]
   Открывший отвечает:
