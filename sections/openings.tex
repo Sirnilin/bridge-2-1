@@ -124,16 +124,69 @@
   \bidrow{\bid{3}{\cl/\di}}{8+}{Натуральное, 5+ карт\gf}
 \contbidsend
 
-% --- Слабые двойки ---
-\bidsectionstart[open:2weak]{Слабые двойки: \bid{2}{\di}, \bid{2}{\h}, \bid{2}{\s}}
-  \bidrow{\bid{2}{\di/\h/\s}}{5--11}{6-карт. масть, стандартный преемпт}
+% --- 2 бубны ---
+\bidsectionstart[open:2di]{Открытие \bid{2}{\di}}
+  \bidrow{\bid{2}{\di}}{5--10}{6-карт. мажор (неизвестный), полублок\al}
 \bidsectionend
 
-\contbidsstart{\bid{2}{\di/\h/\s}}
-  \bidrow{Новая масть}{$\sim$}{Натуральное\fone}
-  \bidrow{\bid{2}{\nt}}{15+}{Огнё (запрос)\al\fone}
-  \bidrow{Рейз}{$\sim$}{Преемптивный / к игре}
+\contbidsstart{\bid{2}{\di}}
+  \bidrow{Пас}{$\sim$}{Своя бубна / к игре}
+  \bidrow{\bid{2}{\h}/\bid{2}{\s}}{$\sim$}{В масть, сайнофф\so}
+  \bidrow{\bid{3}{\h}/\bid{3}{\s}}{$\sim$}{В масть, сайнофф\so}
+  \bidrow{\bid{4}{\s}}{$\sim$}{Контракт}
+  \bidrow{\bid{2}{\nt}}{15+}{Вопрос\al\fone}
 \contbidsend
+
+\begin{bidnote}[Ответы на \bid{2}{\nt} после \bid{2}{\di}]
+  \begin{tabular}{L{2.2cm} L{13.3cm}}
+    \bid{3}{\cl} & Минимум, масть --- \h \\
+    \bid{3}{\di} & Минимум, масть --- \s \\
+    \bid{3}{\h} & Максимум, масть --- \s\gf \\
+    \bid{3}{\s} & Максимум, масть --- \h\gf \\
+    \bid{3}{\nt} & Масть типа ТКДхxx \\
+  \end{tabular}
+\end{bidnote}
+
+% --- 2 червы ---
+\bidsectionstart[open:2h]{Открытие \bid{2}{\h}}
+  \bidrow{\bid{2}{\h}}{5--10}{55: \h\ с минором\al}
+\bidsectionend
+
+\contbidsstart{\bid{2}{\h}}
+  \bidrow{Пас}{$\sim$}{К игре}
+  \bidrow{\bid{2}{\s}}{$\sim$}{Натуральное, не форсирует\so}
+  \bidrow{\bid{3}{\cl}}{$\sim$}{В масть (слабо), поиск минора\so}
+  \bidrow{\bid{2}{\nt}}{15+}{Вопрос\al\fone}
+\contbidsend
+
+\begin{bidnote}[Ответы на \bid{2}{\nt} после \bid{2}{\h}]
+  \begin{tabular}{L{2.2cm} L{13.3cm}}
+    \bid{3}{\cl} & Минимум, минор --- \cl \\
+    \bid{3}{\di} & Минимум, минор --- \di \\
+    \bid{3}{\h} & Максимум, минор --- \cl\gf \\
+    \bid{3}{\s} & Максимум, минор --- \di\gf \\
+  \end{tabular}
+\end{bidnote}
+
+% --- 2 пики ---
+\bidsectionstart[open:2s]{Открытие \bid{2}{\s}}
+  \bidrow{\bid{2}{\s}}{5--10}{55: \s\ с минором\al}
+\bidsectionend
+
+\contbidsstart{\bid{2}{\s}}
+  \bidrow{Пас}{$\sim$}{К игре}
+  \bidrow{\bid{3}{\cl}}{$\sim$}{В масть (слабо), поиск минора\so}
+  \bidrow{\bid{2}{\nt}}{15+}{Вопрос\al\fone}
+\contbidsend
+
+\begin{bidnote}[Ответы на \bid{2}{\nt} после \bid{2}{\s}]
+  \begin{tabular}{L{2.2cm} L{13.3cm}}
+    \bid{3}{\cl} & Минимум, минор --- \cl \\
+    \bid{3}{\di} & Минимум, минор --- \di \\
+    \bid{3}{\h} & Максимум, минор --- \cl\gf \\
+    \bid{3}{\s} & Максимум, минор --- \di\gf \\
+  \end{tabular}
+\end{bidnote}
 
 % --- Преемптивные ---
 \bidsectionstart[open:preempt]{Преемптивные открытия}
