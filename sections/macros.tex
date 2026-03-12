@@ -25,8 +25,11 @@
 \newcommand{\bidrow}[3]{#1 & #2 & #3 \\}
 
 % --- Начало/конец таблицы бидов ---
-\newcommand{\bidsectionstart}[1]{%
-  \subsection{#1}
+% Необязательный аргумент [label] добавляет \label для hyperref-ссылок
+\newcommand{\bidsectionstart}[2][]{%
+  \subsection{#2}%
+  \def\bslabel{#1}%
+  \ifx\bslabel\empty\else\label{#1}\fi%
   \vspace{-0.3em}
   \begin{tabular}{L{2.2cm} L{2.5cm} L{10.5cm}}
   \toprule
